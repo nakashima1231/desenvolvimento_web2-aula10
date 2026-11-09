@@ -6,7 +6,6 @@
     <title>Cadastro de usuário</title>
 </head>
 <body>
-    <!-- $_POST[] -->
     <form action="salva_oferta.php" method='post' enctype='multipart/form-data'>
         <label for="">Nome da oferta:</label>
         <input type="text" name='nome'><br>
