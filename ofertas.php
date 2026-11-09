@@ -10,8 +10,8 @@ while($resultado = $stm->fetch(PDO::FETCH_ASSOC)) {
     echo "<a href=\"detalhe_oferta.php?id={$resultado['id_oferta']}\"><img src='{$resultado['foto']}' height='100px'></a>";
     echo "<br><h2>";
     echo $resultado['valorOferta'];
-    echo "</h2><br>";
+    echo "</h2>";
+    echo "<a href=\"apagar_oferta.php?id={$resultado['id_oferta']}\">Apagar Oferta</a>";
+    echo "<br><br>";
 }
-
-
 ?>

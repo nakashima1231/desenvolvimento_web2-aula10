@@ -16,17 +16,16 @@ while($resultado = $stm->fetch(PDO::FETCH_ASSOC)) {
     echo "<a href='{$resultado['link']}'>Comprar</a>";
 }
 
-$comandoComentario = "SELECT `comentario` FROM `comentarios` WHERE `id_oferta` = $i  ORDER BY `id` ASC";
+$comandoComentario = "SELECT `id_comentario`, `comentario` FROM `comentarios` WHERE `id_oferta` = $i ORDER BY `id_comentario` ASC";
 
 $stm = $conexao->prepare($comandoComentario);
 $stm->execute();
 
 while($resultado = $stm->fetch(PDO::FETCH_ASSOC)) {
-    echo "<h2>$resultado[comentario]</h2>";
+    echo "<h2>{$resultado['comentario']}</h2>";
+    echo "<a href=\"apagar_comentario.php?id={$resultado['id_comentario']}&id_oferta=$i\">Apagar</a>";
 }
 ?>
-
-
 
 <form action="enviarComentario.php" method="post">
     <label for="">Digite um comentario: </label>
